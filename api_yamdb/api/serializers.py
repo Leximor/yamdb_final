@@ -1,10 +1,8 @@
 import datetime as dt
 
 from rest_framework import serializers
-
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
-from reviews.models import (Genre, Category, Title,
-                            Review, Comment)
 
 CHANGE_USERNAME = 'Нельзя создать пользователя с username = "me"'
 MESSAGE_DUBPLICATE_REVIEW = 'От Вас уже есть отзыв на это произведение.'

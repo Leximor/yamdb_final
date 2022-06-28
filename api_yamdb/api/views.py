@@ -1,26 +1,23 @@
-from django.shortcuts import get_object_or_404
-from django.contrib.sites.shortcuts import get_current_site
+import django_filters as filter
+from api.mixins import CreateListDestroy
+from api.permissions import (AdministratorOrReadOnly,
+                             AuthorOrModeratorOrReadOnly, IsAdmin)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             CreateUserSerializer, GenreSerializer,
+                             ReadTitleSerializer, ReviewSerializer,
+                             TitleSerializer, TokenSerializer, UsersSerializer)
 from django.contrib.auth.base_user import BaseUserManager
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.db.models import Avg
+from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-import django_filters as filter
-from rest_framework.permissions import IsAuthenticated
-from rest_framework import status, viewsets, filters
-from rest_framework.response import Response
+from rest_framework import filters, status, viewsets
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-
-from reviews.models import Genre, Category, Title, Review, Comment
-from api.serializers import (CategorySerializer, GenreSerializer,
-                             ReadTitleSerializer, TitleSerializer,
-                             ReviewSerializer, CreateUserSerializer,
-                             UsersSerializer, TokenSerializer,
-                             CommentSerializer)
-from api.permissions import (AuthorOrModeratorOrReadOnly,
-                             AdministratorOrReadOnly,
-                             IsAdmin)
-from api.mixins import CreateListDestroy
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User, UserRole
 
 MAIL_SUBJECT = 'Ваш confirmation code'
