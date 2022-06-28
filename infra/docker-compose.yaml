@@ -9,7 +9,7 @@ services:
     env_file:
       - .env.dist
   web:
-    image: jackdoex/api_yamdb:latest
+    image: zelvo/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
