@@ -6,8 +6,8 @@ services:
     image: postgres:13.0-alpine
     volumes:
       - /var/lib/postgresql/data/
-    env_file:
-      - ./.env.dist
+    # env_file:
+    #   - ./.env.dist
   web:
     build: ../api_yamdb/
     restart: always
@@ -16,8 +16,8 @@ services:
       - media_value:/app/media/
     depends_on:
       - db
-    env_file:
-      - ./.env.dist
+    # env_file:
+    #   - ./.env.dist
 
   nginx:
     image: nginx:1.21.3-alpine
