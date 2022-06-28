@@ -70,5 +70,6 @@ docker container start <CONTAINER ID>
 
 [Андрей](https://github.com/andreysdrv)
 
-[![Zelvo Actions Status]
-(https://github.com/Leximor/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Leximor/yamdb_final/actions)
+Статус:
+
+[![Zelvo Actions Status](https://github.com/Leximor/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Leximor/yamdb_final/actions)
