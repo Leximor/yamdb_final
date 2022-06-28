@@ -7,9 +7,9 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     env_file:
-      - ./.env.dist
+      - .env.dist
   web:
-    build: ../api_yamdb/
+    image: jackdoex/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
@@ -17,7 +17,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env.dist
+      - .env.dist
 
   nginx:
     image: nginx:1.21.3-alpine
