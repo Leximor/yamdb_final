@@ -70,4 +70,5 @@ docker container start <CONTAINER ID>
 
 [Андрей](https://github.com/andreysdrv)
 
-![example workflow](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg)
+[![Zelvo Actions Status]
+(https://github.com/Leximor/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Leximor/yamdb_final/actions)
