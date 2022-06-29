@@ -34,7 +34,8 @@ jobs:
         python -m flake8 
         # перейти в папку, содержащую manage.py — 
         #<корневая_папка_api_yamdb/<папка_проекта>/manage.py
-        cd api_yamdb
+        pytest
+        cd api_yamdb/
         # запустить написанные разработчиком тесты
         python manage.py test
   build_and_push_to_docker_hub:
@@ -73,8 +74,9 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            docker pull zelvo/yamdb_final:latest
             sudo docker-compose stop
-            sudo docker-compose rm web
+            docker-compose up -d
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env

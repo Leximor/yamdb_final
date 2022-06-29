@@ -34,7 +34,8 @@ jobs:
         python -m flake8 
         # перейти в папку, содержащую manage.py — 
         #<корневая_папка_api_yamdb/<папка_проекта>/manage.py
-        cd api_yamdb
+        pytest
+        cd api_yamdb/
         # запустить написанные разработчиком тесты
         python manage.py test
   build_and_push_to_docker_hub:
