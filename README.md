@@ -74,6 +74,6 @@ docker container start <CONTAINER ID>
 
 Развернуты проект доступен по ссылке:
 
-http://51.250.21.217/redoc/
+http://51.250.21.217/admin/
 
 [![Django-app workflow](https://github.com/Leximor/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Leximor/yamdb_final/actions/workflows/yamdb_workflow.yml)
