@@ -29,8 +29,10 @@ services:
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     environment:
-    - NGINX_HOST=localhost
-    - NGINX_PORT=80
+    - NGINX_HOST
+    - NGINX_PORT
+    env_file:
+      - .env
 
     depends_on:
       - web
