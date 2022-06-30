@@ -59,6 +59,7 @@ jobs:
           script: |
             docker pull zelvo/yamdb_final:latest
             sudo docker-compose stop
+            sudo docker-compose rm web
             docker-compose up -d
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
