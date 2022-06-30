@@ -43,7 +43,7 @@ jobs:
         with:
           context: ./api_yamdb/
           push: true
-          tags: zelvo/yamdb_final
+          tags: zelvo/yamdb_final:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
@@ -60,7 +60,6 @@ jobs:
             docker pull zelvo/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose rm web
-            docker-compose up -d
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
